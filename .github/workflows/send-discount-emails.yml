@@ -4,12 +4,12 @@
 name: Run every 5 minutes
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 * * * *"
     
 jobs:
   sendMessageNotification:
     runs-on: ubuntu-latest
     steps:
-    - run: curl -s -X POST "https://heyspoil.me/api/cron/send-message-notifications?token=${TOKEN}"
+    - run: curl -s -X POST "https://convertx.io/api/webhook/discount-cron?token=${TOKEN}"
       env: 
         TOKEN: ${{ secrets.CRON_API_SECRET }}
