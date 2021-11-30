@@ -1,0 +1,15 @@
+# CRON job to fire few events like sending message notifications and deleting
+# inactive users with unconfirmed email
+
+name: Run every 5 minutes
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+    
+jobs:
+  sendMessageNotification:
+    runs-on: ubuntu-latest
+    steps:
+    - run: curl -s -X POST "https://heyspoil.me/api/cron/send-message-notifications?token=${TOKEN}"
+      env: 
+        TOKEN: ${{ secrets.CRON_API_SECRET }}
