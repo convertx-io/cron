@@ -12,4 +12,4 @@ jobs:
     steps:
     - run: curl -s -X POST "https://convertx.io/api/webhook/discount-cron?token=${TOKEN}"
       env: 
-        TOKEN: ${{ secrets.CRON_API_SECRET }}
+        TOKEN: ${{ secrets.TOKEN }}
