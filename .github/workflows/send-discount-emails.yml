@@ -1,7 +1,7 @@
 # CRON job to fire few events like sending message notifications and deleting
 # inactive users with unconfirmed email
 
-name: Run every 5 minutes
+name: Run every 4th hour
 on:
   schedule:
     - cron: "0 */4 * * *"
